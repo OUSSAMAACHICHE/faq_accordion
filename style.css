@@ -1,0 +1,131 @@
+:root {
+	/* ## Colors */
+
+	--White: hsl(0, 0%, 100%);
+	--Light-pink: hsl(275, 100%, 97%);
+	--Grayish-purple: hsl(292, 16%, 49%);
+	--Dark-purple: hsl(292, 42%, 14%);
+}
+@font-face {
+	font-family: 'workSantBold';
+	src: url('./assets/fonts/static/WorkSans-Bold.ttf');
+}
+@font-face {
+	font-family: 'regularWarkSans';
+	src: url('./assets/fonts/static/WorkSans-Regular.ttf');
+}
+@font-face {
+	font-family: 'semiBoldWarkSans';
+	src: url('./assets/fonts/static/WorkSans-SemiBold.ttf');
+}
+body {
+	font-family: "regularWarkSans";
+	margin: 0;
+	padding: 0;
+	min-height: 100vh;
+	background-color: var(--White);
+	position: relative;
+} 
+* {
+	box-sizing: border-box;
+}
+.backgrond {
+	position: fixed;
+	background-image: url('./assets/images/background-pattern-desktop.svg');
+	background-size: cover;
+	bottom: 450px;
+	left: 0;
+	top: 0;
+	right: 0;
+}
+main {
+	max-width: 600px;
+	background-color: var(--White);
+	color: black;
+	position: absolute;
+	left: 50%;
+	top: 25%;
+	transform: translate(-50%);
+	padding: 30px 30px 20px;
+	border-radius: 15px;
+	box-shadow: 0px -5px 11px -3px var(--Dark-purple);
+}
+header {
+	margin: 10px 0;
+}
+header h1{
+	display: inline-block;
+	margin: 0;
+	font-family: 'workSantBold';
+	font-size: 2.7rem;
+	color: var(--Dark-purple);
+}
+header img {
+	width: 30px;
+	margin-right: 10px;
+}
+/* Question area  */
+.question_content {
+	padding: 5px;
+}
+.question_content:not(:last-child) {
+	border-bottom: 1px solid var(--Light-pink);
+	
+}
+.question_area {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+.question_area img {
+	width: 25px;
+	margin-left: 10px;
+	cursor: pointer;
+}
+.question_area .question {
+	color: var(--Dark-purple);
+	font-size: 1rem;
+	cursor: pointer;
+	transition: all .2s ease-in;
+	font-family: 'semiBoldWarkSans';
+}
+.question_area .question:hover {
+	color: var(--Grayish-purple);
+}
+.answer {
+	transition: all 0.3s ease-in;
+	color: var(--Grayish-purple);
+	line-height: 1.4;
+	margin: 10px 0 15px;
+	display: none;
+}
+.answer.show {
+	display: block;
+}
+.minus {
+	display: none;
+}
+
+@media (max-width: 767px) {
+	.backgrond {
+		background-image: url('./assets/images/background-pattern-mobile.svg');
+		bottom: 500px;
+	}
+	main {
+		width: 90%;
+		top: 15%;
+	}
+	.answer {
+		font-size: 0.9rem;
+	}
+}
+.attribution {
+	font-size: 11px;
+	text-align: center;
+	position: fixed;
+	bottom: 10px;
+}
+
+.attribution a {
+	color: hsl(228, 45%, 44%);
+}
